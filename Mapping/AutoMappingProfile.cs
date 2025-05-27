@@ -22,6 +22,7 @@ namespace DemoFirstProject.Mapping
             CreateMap<GET_FamilyDetailsById, GET_FamilyDetailsByIddto>().ReverseMap();
             CreateMap<Notification, Notificationdto>().ReverseMap();
             CreateMap<GET_MainGroup,GET_MainGroupDto>().ReverseMap();
+            CreateMap<GET_DashCount,GET_DashCountDto>().ReverseMap();
         }
     }
 }
