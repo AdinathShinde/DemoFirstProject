@@ -46,6 +46,7 @@ builder.Services.AddScoped<IGET_FamilyDetailsByIdRepository, SqlGET_FamilyDetail
 builder.Services.AddScoped<INotificationRepository,SqlNotificationRepository> ();
 builder.Services.AddScoped<IGET_MainGroupRepository,SqlGET_MainGroupRepository> ();
 builder.Services.AddScoped<IGET_DashCountRepository,SqlGET_DashCountRepository> ();
+builder.Services.AddScoped<IGET_BillNoSearchRepository,SqlGET_BillNoSearchRepository> ();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

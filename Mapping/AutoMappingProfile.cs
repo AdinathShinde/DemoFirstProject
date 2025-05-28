@@ -23,6 +23,8 @@ namespace DemoFirstProject.Mapping
             CreateMap<Notification, Notificationdto>().ReverseMap();
             CreateMap<GET_MainGroup,GET_MainGroupDto>().ReverseMap();
             CreateMap<GET_DashCount,GET_DashCountDto>().ReverseMap();
+            CreateMap<GET_DashCount, GET_CropItemdto>().ReverseMap();
+            CreateMap<GET_BillNoSearch, GET_BillNoSearchDto>().ReverseMap();
         }
     }
 }
