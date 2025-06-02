@@ -25,6 +25,7 @@ namespace DemoFirstProject.Mapping
             CreateMap<GET_DashCount,GET_DashCountDto>().ReverseMap();
             CreateMap<GET_DashCount, GET_CropItemdto>().ReverseMap();
             CreateMap<GET_BillNoSearch, GET_BillNoSearchDto>().ReverseMap();
+            CreateMap<DocumentUpload, DocumentUploadDto>().ReverseMap();
         }
     }
 }
