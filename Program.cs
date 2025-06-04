@@ -50,6 +50,8 @@ builder.Services.AddScoped<IGET_BillNoSearchRepository,SqlGET_BillNoSearchReposi
 builder.Services.AddScoped<IDocumentUploadRepository,SqlDocumentUploadRepository> ();
 builder.Services.AddScoped<IGET_CropMonthDataRepository,SqlGET_CropMonthDataRepository> ();
 builder.Services.AddScoped<IGET_PARKINGRepository,SqlGET_PARKINGRepository> ();
+builder.Services.AddScoped<IGET_ShopAlotRepository,SqlGET_ShopAlotRepository> ();
+builder.Services.AddScoped<ISP_DeleteShopAlotRepository, SqlSP_DeleteShopAlotRepository> ();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

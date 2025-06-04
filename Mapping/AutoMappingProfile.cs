@@ -28,6 +28,8 @@ namespace DemoFirstProject.Mapping
             CreateMap<DocumentUpload, DocumentUploadDto>().ReverseMap();
             CreateMap<GET_CropMonthData,  GET_CropMonthDataDto>().ReverseMap();
             CreateMap<GET_PARKING, GET_PARKINGDto>().ReverseMap();
+            CreateMap<GET_ShopAlot, GET_ShopAlotDto>().ReverseMap();
+            CreateMap<SP_DeleteShopAlot, SP_DeleteShopAlotDto>().ReverseMap();
         }
     }
 }
