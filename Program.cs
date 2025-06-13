@@ -52,6 +52,7 @@ builder.Services.AddScoped<IGET_CropMonthDataRepository,SqlGET_CropMonthDataRepo
 builder.Services.AddScoped<IGET_PARKINGRepository,SqlGET_PARKINGRepository> ();
 builder.Services.AddScoped<IGET_ShopAlotRepository,SqlGET_ShopAlotRepository> ();
 builder.Services.AddScoped<ISP_DeleteShopAlotRepository, SqlSP_DeleteShopAlotRepository> ();
+builder.Services.AddScoped<IGET_ProductMasterRepository, SqlGET_ProductMasterRepository> ();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
