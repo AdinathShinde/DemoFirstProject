@@ -19,15 +19,22 @@ public class ExcelDownloadController : ControllerBase
     [HttpPost("download")]
     public async Task<IActionResult> Download([FromBody] ExcelExportRequest request)
     {
-        var dt = await _executor.ExecuteFunctionAsync(request.FunctionName, request.Parameters);
+        try
+        {
+            var dt = await _executor.ExecuteFunctionAsync(request.FunctionName, request.Parameters);
 
-        // Filter only selected columns
-        var selectedCols = request.ColumnsToInclude
-                            .Where(c => dt.Columns.Contains(c))
-                            .ToList();
+            // Filter only selected columns
+            var selectedCols = request.ColumnsToInclude
+                                .Where(c => dt.Columns.Contains(c))
+                                .ToList();
 
-        var bytes = _excel.ExportToExcel(dt, selectedCols);
+            var bytes = _excel.ExportToExcel(dt, selectedCols);
 
-        return File(bytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"{request.FunctionName}_Export.xlsx");
+            return File(bytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"{request.FunctionName}_Export.xlsx");
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
     }
 }
