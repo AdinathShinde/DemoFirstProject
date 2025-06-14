@@ -4,6 +4,7 @@ using DemoFirstProject.Repository;
 using Microsoft.EntityFrameworkCore;
 
 using OfficeOpenXml;
+using QuestPDF.Infrastructure;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +20,8 @@ builder.Services.AddDbContext<ApplicatioDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("shadimuharathConStr")));
 
 builder.Services.AddAutoMapper(typeof(AutoMappingProfile));
-
+QuestPDF.Settings.License = LicenseType.Community;
+builder.Services.AddScoped<PdfExporter>();
 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 builder.Services.AddScoped<ExcelExporter>();
 builder.Services.AddScoped<SqlFunctionExecutor>();
