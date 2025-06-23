@@ -31,7 +31,7 @@ namespace DemoFirstProject.Repository
                             ITEMID = reader.GetString("ITEMID"),
                             ITEMNM = reader.GetString("ITEMNM"),
                             ITEMNE = reader.GetString("ITEMNE"),
-                            STATUS = reader.GetString("STATUS"),
+                           STATUS = reader.GetString("STATUS")
 
 
 

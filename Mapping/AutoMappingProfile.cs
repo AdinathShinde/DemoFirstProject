@@ -30,6 +30,7 @@ namespace DemoFirstProject.Mapping
             CreateMap<GET_PARKING, GET_PARKINGDto>().ReverseMap();
             CreateMap<GET_ShopAlot, GET_ShopAlotDto>().ReverseMap();
             CreateMap<GET_ProductMaster, GET_ProductMasterDto>().ReverseMap();
+            CreateMap<GET_GateFarmer, GET_GateFarmerDto>().ReverseMap();
             
         }
     }
