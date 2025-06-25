@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 using DemoFirstProject.Data;
 using DemoFirstProject.Model.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -45,8 +46,6 @@ namespace DemoFirstProject.Repository
             }
             return list;
         }
-
-
 
         public async Task<List<GET_MarketStore>> Searchasync(GET_MarketStoreDomain input)
         {
