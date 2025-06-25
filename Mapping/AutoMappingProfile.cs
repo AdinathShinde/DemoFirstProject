@@ -31,6 +31,7 @@ namespace DemoFirstProject.Mapping
             CreateMap<GET_ShopAlot, GET_ShopAlotDto>().ReverseMap();
             CreateMap<GET_ProductMaster, GET_ProductMasterDto>().ReverseMap();
             CreateMap<GET_GateFarmer, GET_GateFarmerDto>().ReverseMap();
+            CreateMap<GET_ADHAARAPP, GET_ADHAARAPPDto>().ReverseMap();
             
         }
     }
@@ -73,5 +74,5 @@ namespace DemoFirstProject.Mapping
 
 
 
-.
+
 

@@ -56,6 +56,7 @@ builder.Services.AddScoped<IGET_ShopAlotRepository,SqlGET_ShopAlotRepository> ()
 builder.Services.AddScoped<ISP_DeleteShopAlotRepository, SqlSP_DeleteShopAlotRepository> ();
 builder.Services.AddScoped<IGET_ProductMasterRepository, SqlGET_ProductMasterRepository> ();
 builder.Services.AddScoped<IGET_GateFarmerRepository, SqlGET_GateFarmerRepository> ();
+builder.Services.AddScoped<IGET_ADHAARAPPRepository, SqlGET_ADHAARAPPRepository> ();
 
 
 var app = builder.Build();
