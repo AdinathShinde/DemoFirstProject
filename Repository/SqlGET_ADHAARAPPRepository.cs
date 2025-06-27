@@ -38,6 +38,34 @@ namespace DemoFirstProject.Repository
             }
             return list;
         }
+
+        public async Task<List<GET_ADHAARAPP>> searchasync(GET_ADHAARAPPDomain input)
+        {
+            List<GET_ADHAARAPP> list = new List<GET_ADHAARAPP>();
+            using (var command = dbContext.Database.GetDbConnection().CreateCommand())
+            {
+                command.CommandText = "SELECT  * FROM[GET_ADHAARAPP]( '" + input.FADDHARNO + "')";
+                dbContext.Database.OpenConnection();
+                using (var reader = await command.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        list.Add(new GET_ADHAARAPP
+                        {
+                            FAID = reader.GetString("FAID"),
+                            FNAME = reader.GetString("FNAME"),
+                            FADDHARNO = reader.GetString("FADDHARNO"),
+                            FBIRTHDATE = reader.GetString("FBIRTHDATE"),
+
+
+
+                        });
+                    }
+                }
+            }
+            return list;
+        
+    }
     }
 }
 

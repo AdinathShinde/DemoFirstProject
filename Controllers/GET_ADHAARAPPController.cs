@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DemoFirstProject.Model.Domain;
+using DemoFirstProject.Model.DTO;
 using DemoFirstProject.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -31,5 +32,25 @@ namespace DemoFirstProject.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+        [HttpPost("_Search")]
+        public async Task<IActionResult> Search([FromBody] GET_ADHAARAPPDomain input)
+        {
+            try
+            {
+
+                var domain = await repository.searchasync(input);
+
+                var dto = mapper.Map<List<GET_ADHAARAPPDto>>(domain);
+                return Ok(dto);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+
+        }
     }
 }
+
+
